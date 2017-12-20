@@ -48,14 +48,10 @@ data:
   Corefile: |
     .:53 {
         errors
-        log
         health
         kubernetes CLUSTER_DOMAIN SERVICE_CIDR POD_CIDR {
-          pods insecure
-          upstream /etc/resolv.conf
         }
-        prometheus :9153
-        proxy . /etc/resolv.conf
+        prometheus
         cache 30
     }
 ---
