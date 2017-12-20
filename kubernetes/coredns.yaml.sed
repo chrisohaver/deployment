@@ -50,9 +50,11 @@ data:
         errors
         health
         kubernetes CLUSTER_DOMAIN SERVICE_CIDR POD_CIDR {
+          upstream /etc/resolv.conf
         }
-        prometheus
+        prometheus :9153
         cache 30
+        proxy /etc/resolv.conf
     }
 ---
 apiVersion: extensions/v1beta1
